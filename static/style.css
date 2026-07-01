@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+body {
+    background: url("/static/bg.png") no-repeat center center fixed;
+    background-size: cover;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.split-screen {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SECTION */
+.left-section {
+    flex: 1.2;
+    
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.hero-text span {
+    color: #f9f8f9;
+}
+
+/* This centers the entire form block in the right-hand half of the screen */
+.right-section {
+    flex: 1;
+    
+    display: flex;
+    align-items: center;    /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    padding: 40px;
+}
+
+/* This ensures all elements inside the form (h2, p, input) are centered relative to each other */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #b3b3b3;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+/* INPUTS */
+.input-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: #1c1133;
+    border: 1px solid #332450;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #5d3fd3;
+}
+
+/* BUTTON */
+.btn-signup {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #5d3fd3, #4a90e2);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-signup:hover {
+    transform: translateY(-2px);
+}
+
+/* SOCIAL & DIVIDER */
+.divider {
+    text-align: center;
+    border-bottom: 1px solid #332450;
+    line-height: 0.1em;
+    margin: 30px 0;
+}
+
+.divider span {
+    background: #0b011d;
+    padding: 0 10px;
+    color: #777;
+    font-size: 0.8rem;
+}
+
+.social-login {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #1c1133;
+    color: white;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer-text, .login-link {
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #777;
+    text-decoration: none;
+}
+
+.footer-text a, .login-link {
+    color: #a259ff;
+    font-weight: 600;
+}
+
+.error {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.8rem;
+}
+
+/* Update for the left side "SIGN IN TO YOUR" */
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff; /* Forces "SIGN IN TO YOUR" to white */
+}
+
+
+/* Updated Heading: Center text and remove manual left margins */
+.form-container h2 {
+    color: #ffffff;
+    text-align: center; /* Centers the "SIGN IN" text */
+    margin-left: 0;     /* Remove previous manual spacing */
+    margin-right: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.form-container .subtitle {
+    color: #b3b3b3;
+    text-align: center; /* Centers the "Sign in with email" text */
+    margin-left: 0;     /* Remove previous manual spacing */
+    margin-right: 0;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+/* --- Login/Signup Shared Heading Styles --- */
+
+
+
+
+
+/* --- Footer Link Styles --- */
+
+.auth-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Centering the bottom links */
+.auth-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.login-link {
+    color: #a259ff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+    /* margin: 0; */  /* Either finish this or delete it */
+}
+.signup-section{
+flex: 1;
+    display: flex;
+    align-items: center;        /* Keeps it vertically centered */
+    
+    /* CHANGE THIS: */
+    justify-content: flex-start; /* Pushes content to the LEFT */
+    
+    /* ADD THIS: */
+    padding-left: 65%;           /* Adjust this % to push it away from the very edge */
+    padding-right: 40px; 
+    padding-top: 40px;
+    padding-bottom: 40px; 
+}
+
+/* Container to push the form to the right */
+.main-hero-container {
+    height: 100vh;
+    width: 100%;
+    background: url("/static/bg.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* This moves the form to the right */
+    padding-right: 10%;         /* Gap between form and right edge */
+}
+
+/* Glassmorphism style for the form box */
+.form-overlay {
+    width: 100%;
+    max-width: 400px;
+    
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);    /* Blurs background behind the form */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Ensure headings are centered within the form box */
+.form-container h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.form-container .subtitle {
+    color: #b3b3b3;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Styling for the Success-specific elements */
+.success-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #a259ff; /* Matching your theme purple */
+    margin-bottom: 20px;
+    background: rgba(162, 89, 255, 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Ensure the success text stands out but remains readable */
+.form-container h2 {
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.form-container .subtitle {
+    color: #b3b3b3;
+    line-height: 1.6;
+    margin-bottom: 40px; /* More space before the logout button */
+}
+
+/* Reuse the same button gradient for consistency */
+.btn-signup {
+    /* (This should already be in your CSS from previous steps) */
+    background: linear-gradient(90deg, #5d3fd3, #4a90e2);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.main-hero-container {
+    height: 100vh;
+    width: 100%;
+    background: url("/static/bg.png") no-repeat center center fixed;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;         /* Vertically centered */
+    
+    /* --- CHANGE TO CENTER --- */
+    justify-content: center;     /* Centers the form horizontally */
+    
+    padding-left: 65%;               /* General padding for mobile responsiveness */
+}
+
+/* Ensure the form box itself is centered and readable */
+.form-overlay {
+    width: 100%;
+    max-width: 500px;            /* Keeps the form from getting too wide */
+    background: rgba(11, 1, 29, 0.7); /* Slightly darker for better contrast when centered */
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px); /* Stronger blur for the "glass" look */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+/* Allows the page to scroll if the form is taller than the viewport */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.main-hero-container {
+    min-height: 100vh;           /* Use min-height instead of height */
+    height: auto;
+    overflow-y: auto;            /* Enables vertical scrolling */
+    padding-top: 50px;           /* Top/Bottom breathing room for the form */
+    padding-bottom: 50px;
+}
+/* General Setup */
+body.survey-page {
+    background-color: #f0f8ff; /* Very light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* The White Form Card */
+.survey-card {
+    background:  rgba(28, 2, 77, 0.7);
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 2px solid #3498db; /* Blue border like the image */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* Input Fields */
+.field-group {
+    margin-bottom: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid  rgba(11, 1, 29, 0.7);
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Focus effect to match the blue theme */
+input:focus, select:focus, textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Select arrows */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+/* Submit Button - Light Blue Gradient/Solid */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color:  rgba(47, 4, 127, 0.7); /* Sky blue color from image */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #3498db;
+}
+
+/* Logout link */
+.logout-container {
+    text-align: center;
+    width: 100%;
+    padding: 12px;
+    background-color:  rgba(47, 4, 127, 0.7); /* Sky blue color from image */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 2%;
+}
+
+.logout-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.logout-link:hover {
+    background-color: #3498db;
+}
+
+/* Light background for the entire page */
+body.survey-paged {
+    background-color: #f0f8ff; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    color:#fff;
+    padding-left: 60%;
+    
+}
+
+/* The white box with the blue border matching image_e084d6.png */
+.survey-card1 {
+    background:  rgba(28, 2, 77, 0.7);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border: 2px solid  rgba(28, 2, 77, 0.7); 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
+}
+
+.survey-card h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.field-group {
+    margin-bottom: 15px;
+}
+
+/* Styled inputs for OTP and Password */
+.field-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #100f0f;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.field-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}.button-submit {
+     background: linear-gradient(90deg, #5d3fd3, #4a90e2);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+
+
+.logout-containered {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-linked {
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.logout-linked:hover {
+    text-decoration: underline;
+}
+.verify{
+    padding-left:20%;
+}
+.main-hero-container, .survey-page {
+    /* Ensure the background itself doesn't block clicks to the children */
+    pointer-events: auto; 
+}
+
+/* Star Rating Container */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* Allows us to highlight stars to the left easily */
+    justify-content: center;
+    padding: 5px 0;
+    border: 1px solid #ccc; /* Matches your other input borders */
+    border-radius: 4px;
+    background: #fff;
+}
+
+/* Hide the actual radio buttons */
+.star-rating input {
+    display: none;
+}
+
+/* Style the Star Labels */
+.star-rating label {
+    font-size: 30px;
+    color: #ddd; /* Light grey for empty stars */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    margin: 0 5px;
+}
+
+/* Text label above the stars */
+.star-label {
+    display: block;
+    font-size: 14px;
+    color: #f9f5f5;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Highlight stars on hover and when checked */
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #f1c40f; /* Gold color for selected stars */
+}
+
+/* Optional: If you want it to be BLUE to match the border */
+/* .star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #3498db; 
+}
+*/

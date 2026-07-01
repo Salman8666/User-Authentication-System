@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="survey-page">
+
+    <div class="survey-card">
+        <form method="POST" action="/survey">
+            
+            <div class="field-group">
+                <input type="text" name="name" placeholder="Name" required>
+            </div>
+
+            <div class="field-group">
+                <input type="number" name="age" placeholder="Age" required>
+            </div>
+
+            <div class="field-group">
+                <select name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="field-group">
+                <select name="languages" required>
+                    <option value="">Select Programming Language</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <select name="preferred" required>
+                    <option value="">Select Preferred Language</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="JavaScript">JavaScript</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <select name="ide" required>
+                    <option value="">Select IDE</option>
+                    <option value="VS Code">VS Code</option>
+                    <option value="PyCharm">PyCharm</option>
+                    <option value="Eclipse">Eclipse</option>
+                    <option value="NetBeans">NetBeans</option>
+                    <option value="Sublime Text">Sublime Text</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+    <label class="star-label">Lab Satisfaction</label>
+    <div class="star-rating">
+        <input type="radio" name="satisfaction" value="5" id="s5" required><label for="s5">★</label>
+        <input type="radio" name="satisfaction" value="4" id="s4"><label for="s4">★</label>
+        <input type="radio" name="satisfaction" value="3" id="s3"><label for="s3">★</label>
+        <input type="radio" name="satisfaction" value="2" id="s2"><label for="s2">★</label>
+        <input type="radio" name="satisfaction" value="1" id="s1"><label for="s1">★</label>
+    </div>
+</div>
+
+<div class="field-group">
+    <label class="star-label">Lab Rating</label>
+    <div class="star-rating">
+        <input type="radio" name="rating" value="5" id="r5" required><label for="r5">★</label>
+        <input type="radio" name="rating" value="4" id="r4"><label for="r4">★</label>
+        <input type="radio" name="rating" value="3" id="r3"><label for="r3">★</label>
+        <input type="radio" name="rating" value="2" id="r2"><label for="r2">★</label>
+        <input type="radio" name="rating" value="1" id="r1"><label for="r1">★</label>
+    </div>
+</div>
+
+            <div class="field-group">
+                <select name="time" required>
+                    <option value="">Preferred Lab Time</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <textarea name="suggestions" placeholder="Suggestions"></textarea>
+            </div>
+
+            <div class="field-group">
+                <textarea name="feedback" placeholder="Feedback"></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Survey</button>
+
+        </form>
+
+        <div class="logout-container">
+            <a href="/logout" class="logout-link">Logout</a>
+        </div>
+    </div>
+
+</body>
+</html>

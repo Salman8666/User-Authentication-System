@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password | Adventure</title>
+    
+    <!-- Linking the shared CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Main wrapper that applies the full-screen background image -->
+    <div class="main-hero-container">
+
+        <!-- Overlay container positioned to the right side via CSS -->
+        <div class="form-overlay">
+            <div class="form-container">
+                
+                <h2>FORGOT PASSWORD</h2>
+                <p class="subtitle">Enter your email to receive an OTP</p>
+
+                <!-- Flask Flash/Error Message Section -->
+                {% if message %}
+                    <p class="error">{{ message }}</p>
+                {% endif %}
+
+                <!-- OTP Request Form -->
+                <form method="POST" action="/forgot">
+                    <div class="input-group">
+                        <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Enter Registered Email" 
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="btn-signup">Send OTP</button>
+                </form>
+
+                <!-- Navigation Links -->
+                <div class="auth-footer">
+                    <a href="/" class="login-link">Back to Login</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

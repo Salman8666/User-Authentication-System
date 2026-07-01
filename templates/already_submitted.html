@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="survey-page">
+
+    <div class="survey-card">
+        <h2>Notice</h2>
+
+        <p class="status-message" style="color: #e67e22; text-align: center; margin-bottom: 25px; font-weight: 500;">
+            Your form has already been submitted.
+        </p>
+
+        <form action="/logout" method="GET">
+            <button type="submit" class="btn-submit">Logout</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

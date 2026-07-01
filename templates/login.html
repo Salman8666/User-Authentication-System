@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Adventure</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="split-screen">
+    <!-- Left Side: Branding (Consistent with Signup) -->
+    <div class="left-section">
+        <div class="logo">
+            
+        </div>
+        <div class="hero-text">
+            
+        </div>
+    </div>
+
+    <!-- Right Side: The Login Form -->
+    <div class="right-section">
+        <div class="form-container">
+            <h2>LOG IN</h2>
+            <p class="subtitle">login with email address</p>
+
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+
+            <form method="POST" action="/">
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Yourname@gmail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <button type="submit" class="btn-signup">Log in</button>
+            </form>
+
+            <div class="divider"><span>Or continue with</span></div>
+
+            
+
+            <div class="auth-footer">
+                <a href="/signup" class="login-link">Create Account</a>
+                <span class="separator">|</span>
+                <a href="/forgot" class="login-link">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

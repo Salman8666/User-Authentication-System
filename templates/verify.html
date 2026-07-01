@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <!-- Linking external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="survey-paged">
+
+    <div class="survey-card1">
+        <div class="verify">
+        <h2>Verify OTP</h2>
+        </div>
+        <!-- Display error/success messages -->
+        {% if message %}
+            <p class="error-text" style="color: #e74c3c; text-align: center; font-size: 14px; margin-bottom: 15px;">
+                {{ message }}
+            </p>
+        {% endif %}
+
+        <form method="POST" action="/verify">
+
+            <div class="field-group">
+                <input 
+                    type="text" 
+                    name="otp" 
+                    placeholder="Enter OTP" 
+                    required
+                >
+            </div>
+
+            <div class="field-group">
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="New Password" 
+                     required minlength="6" 
+                           pattern="(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}"
+                           title="Must contain 1 uppercase and 1 special character">
+                
+            </div>
+
+            <button type="submit" class="button-submit">Reset Password</button>
+
+        </form>
+
+        <div class="logout-containered">
+            <a href="/" class="logout-linked">Back to Login</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | Adventure</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Adding Google Fonts for that clean look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="split-screen">
+    <!-- Left Side: Branding/Visuals -->
+    <div class="left-section">
+        <div class="logo">
+
+        <div class="hero-text">
+            
+        </div>
+    </div>
+
+    <!-- Right Side: The Form -->
+    <div class="signup-section">
+        <div class="form-container">
+            <h2>SIGN UP</h2>
+            <p class="subtitle">Sign up with your details</p>
+
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+
+            <form method="POST" action="/signup">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Yourname@gmail.com" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" 
+                           required minlength="6" 
+                           pattern="(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}"
+                           title="Must contain 1 uppercase and 1 special character">
+                </div>
+
+                <button type="submit" class="btn-signup">Sign up</button>
+            </form>
+
+            <div class="divider"><span>Or continue with</span></div>
+
+            <div class="social-login">
+                <button class="social-btn google">Google</button>
+                <button class="social-btn facebook">Facebook</button>
+            </div>
+
+            <p class="footer-text">
+                By registering you with our <a href="#">Terms and Conditions</a>
+            </p>
+            <a href="/" class="login-link">Already have an account? Login</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
